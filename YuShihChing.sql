@@ -119,7 +119,11 @@ INSERT INTO REALTOR(RTR_NO, RTR_ID, RTR_PSW, RTR_NAME, RTR_AREA, RTR_IDNO, RE_NO
 VALUES('RT'||(LPAD(to_char(RTR_SEQ.NEXTVAL),8,'0')), 'BA104_RLTR12@GMAIL.COM', '123456', '楊美麗', '中正區', 'B213456789', 'RE000001', 'ON');
 
 
+<<<<<<< HEAD
 -------------- 廠商 --------------
+=======
+===== 廠商 =====
+>>>>>>> 0d48e39ed67857664fad4e3cc770b0e16aa0ce74
 CREATE TABLE SELLER (
 SLR_NO           VARCHAR2(10) NOT NULL,
 SLR_Name         VARCHAR2(40),
@@ -168,7 +172,11 @@ CREATE TABLE PRODUCT (
 PRD_NO          VARCHAR2(10) NOT NULL,
 SLR_NO          VARCHAR2(10) NOT NULL,
 CATE_NO         VARCHAR2(10) NOT NULL,
+<<<<<<< HEAD
 PRD_NAME        VARCHAR2(100) NOT NULL,
+=======
+PRD_NAME        VARCHAR2(50) NOT NULL,
+>>>>>>> 0d48e39ed67857664fad4e3cc770b0e16aa0ce74
 PRD_DESC        CLOB,
 PRD_STOCK       NUMBER(6),
 PRD_PRICE       NUMBER(10) NOT NULL,
@@ -181,6 +189,13 @@ CREATE SEQUENCE PD_SEQ
 INCREMENT BY 1 
 START WITH 1 
 NOCACHE;
+<<<<<<< HEAD
+=======
+################################
+商品還沒 INSERT 假資料
+INSERT INTO PRODUCT(PRD_NO,SLR_NO,CATE_NO,PRD_NAME,PRD_STOCK,PRD_PRICE,PRD_STATE) VALUES('PRD'||(LPAD(to_char(PRD_SEQ.NEXTVAL),6,'0')),'SL00000001','PDCG000001','KLIMPEN桌子, 灰色 淺灰色',62,8780,'On');
+################################
+>>>>>>> 0d48e39ed67857664fad4e3cc770b0e16aa0ce74
 
 INSERT INTO PRODUCT(PRD_NO,SLR_NO,CATE_NO,PRD_NAME,PRD_STOCK,PRD_PRICE,PRD_STATE) VALUES('PD'||(LPAD(to_char(PD_SEQ.NEXTVAL),8,'0')),'SL000001','PC000001','KLIMPEN桌子, 灰色 淺灰色',62,8780,'On');
 INSERT INTO PRODUCT(PRD_NO,SLR_NO,CATE_NO,PRD_NAME,PRD_STOCK,PRD_PRICE,PRD_STATE) VALUES('PD'||(LPAD(to_char(PD_SEQ.NEXTVAL),8,'0')),'SL000001','PC000001','LINNMON/ALEX 桌子, 幾何圖案 藍色, 白色',73,3890,'On');
@@ -220,7 +235,11 @@ NOCACHE;
 ------------------------------
 
 
+<<<<<<< HEAD
 -------- 收藏商品 (外來鍵 MEM_NO、PRD_NO 作為雙主鍵)-----------
+=======
+===== 收藏商品 (外來鍵 MEM_NO、PRD_NO 作為雙主鍵)=====
+>>>>>>> 0d48e39ed67857664fad4e3cc770b0e16aa0ce74
 CREATE TABLE PRD_COLLECTION (
 MEM_NO        VARCHAR2(10) NOT NULL,
 PRD_NO        VARCHAR2(10) NOT NULL,
@@ -228,9 +247,15 @@ PCTIME        TIMESTAMP,
 CONSTRAINT MEM_PRD_PK PRIMARY KEY (MEM_NO,PRD_NO),
 CONSTRAINT PC_MEM_FK FOREIGN KEY(MEM_NO) REFERENCES MEMBER(MEM_NO),
 CONSTRAINT PC_PRD_FK FOREIGN KEY(PRD_NO) REFERENCES PRODUCT(PRD_NO) );
+<<<<<<< HEAD
 ------------------------------
 --收藏商品尚未 INSERT 假資料
 ------------------------------
+=======
+##############################
+收藏商品尚未 INSERT 假資料
+##############################
+>>>>>>> 0d48e39ed67857664fad4e3cc770b0e16aa0ce74
 
 
 
