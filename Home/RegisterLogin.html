@@ -24,7 +24,9 @@
                 $("#password1").val("123456");
                 $("#password2").val("123456");
                 $("#mem_name").val("大大");
-                $("#mem_address").val("中壢市中大路300號");
+                $("#mem_addr").val("中壢市中大路300號");
+                $("#fancy-checkbox-info").attr("checked","enable");
+                $("#aggrement2").attr("checked","enable");
             });
         });
     </script>
@@ -164,18 +166,60 @@
         vertical-align: middle;
     }
     .box-width{
-        width:520px;
-        margin-left: 50px;
+        width:440px;
+        /*margin-left: 10px;*/
     }
     .margin-top{
         margin-top: 20px;
     }
-    #mem_mobile{
-        margin-left: 35px;
-        width: 410px;
+    .loginform{
+        margin-top: 15px;
+        margin-left: 50px;
+        width: 530px;
     }
-    #send_code{
-        margin-right: 42px;
+    .regbtn{
+        margin-left: 55px;
+        width: 510px;
+    }
+    .searchstate{
+        margin-left: 50px;
+    }
+    #searchrequire{
+        font-size: 18px;
+    }
+    #aggrement{
+        color: #999999;
+        margin-left: 45px;
+        margin-top: 20px;
+    }
+    .magicdiv{
+        margin-top: 8px;
+    }
+
+    #fancy-checkbox-info {
+    display: none;
+    }
+    .magicbox{
+        margin-left: 120px;
+        margin-top: 8px;
+    }
+
+    .form-group input[type="checkbox"] + .btn-group > label span {
+        width: 20px;
+    }
+
+    .form-group input[type="checkbox"] + .btn-group > label span:first-child {
+        display: none;
+    }
+    .form-group input[type="checkbox"] + .btn-group > label span:last-child {
+        display: inline-block;   
+    }
+
+    .form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+        display: inline-block;
+    }
+    .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+        display: none;   
     }
 
     </style>
@@ -463,14 +507,14 @@
                     </div>
                     <form class="form-horizontal" action="loginCheck.do" method="post">
                           <div class="form-group margin-top">
-                              <input type="email" class="form-control box-width" id="loginid" name="ID" placeholder="帳號(請輸入email)">
+                              <input type="email" class="form-control loginform" id="loginid" name="ID" placeholder="帳號 (請輸入e-mail)">
                           </div>
                           <div class="form-group margin-top">
-                              <input type="password" class="form-control box-width" id="password" name="Password" placeholder="密碼">
+                              <input type="password" class="form-control loginform" id="password" name="Password" placeholder="密碼">
                           </div>
                           <div class="form-group">
-                              <button type="button" class="btn btn-primary btn-lg btn-block box-width">登入</button>
-                              <div class="col-sm-offset-10 col-sm-2">
+                              <button type="button" class="btn btn-primary btn-lg btn-block loginform">登入</button>
+                              <div class="col-sm-offset-10 col-sm-2 magicdiv">
                                   <button type="button" class="btn btn-default btn-xs" id="magicBtn1">貼</button>
                               </div>
                           </div>
@@ -486,34 +530,62 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="text-center"><label class="control-label">註冊會員</label></h4>
                     </div>
-                    <form class="form-horizontal" action="" method="post">
+                    <form class="form-horizontal" action="insert" method="post">
                         <div class="form-group margin-top">
-                            <input type="email" class="form-control box-width" id="mem_id" name="mem_id" placeholder="帳號(請輸入email)">
+                            <label for="mem_id" class="col-sm-2 control-label">帳號</label>
+                            <div class="col-sm-10">
+                            <input type="email" class="form-control box-width" id="mem_id" name="mem_id" placeholder="請輸入e-mail">
+                            </div>
                         </div>
                         <div class="form-group margin-top">
-                            <input type="password" class="form-control box-width" id="password1" name="Password" placeholder="密碼">
+                            <label for="password1" class="col-sm-2 control-label">密碼</label>
+                            <div class="col-sm-10">
+                            <input type="password" class="form-control box-width" id="password1" name="mem_psw" placeholder="密碼">
+                            </div>
                         </div>
                         <div class="form-group margin-top">
+                            <label for="password2" class="col-sm-2 control-label">確認密碼</label>
+                            <div class="col-sm-10">
                             <input type="password" class="form-control box-width" id="password2" placeholder="確認密碼">
+                            </div>
                         </div>
                         <div class="form-group margin-top">
-                            <input type="text" class="form-control box-width" id="mem_name" name="memName" placeholder="姓名">
+                            <label for="mem_name" class="col-sm-2 control-label">姓名</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control box-width" id="mem_name" name="mem_name" placeholder="姓名">
+                            </div>
                         </div>
                         <div class="form-group margin-top">
-                            <input type="email" class="form-control box-width" id="mem_address" name="Address" placeholder="地址">
+                            <label for="mem_addr" class="col-sm-2 control-label">地址</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control box-width" id="mem_addr" name="mem_addr" placeholder="地址">
+                            </div>
+                        </div>
+                        <div class="[ form-group ]">
+                            <input type="checkbox" name="search_state" id="fancy-checkbox-info" autocomplete="off"/>
+                            <div class="[ btn-group ] magicbox">
+                                <label for="fancy-checkbox-info" class="[ btn btn-info ]">
+                                    <span class="[ glyphicon glyphicon-ok ]"></span>
+                                    <span> </span>
+                                </label>
+                                <label for="fancy-checkbox-info" class="[ btn btn-default active ]">
+                                   我願意公開我的找房狀態，讓房仲能主動找到我 &nbsp&nbsp&nbsp&nbsp
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
-                          <div class="col-sm-offset-1 col-sm-11">
+                          <div class="col-sm-offset-1 col-sm-11"  id="aggrement">
                               <div class="checkbox">
                                 <label>
-                                  <input type="checkbox" name="aggrement"> 若要繼續註冊，請先閱讀並同意好房事的服務條款 & 隱私權政策
+                                  <input type="checkbox" name="aggrement" id="aggrement2"> 
+                                  若要繼續註冊，請先閱讀並同意好房事的<a href="">服務條款</a> & <a href="">隱私權政策</a>
                                 </label>
                               </div>
                           </div>
                         </div>
                           <div class="form-group">
-                              <button type="button" class="btn btn-primary btn-lg btn-block box-width">註冊</button>
-                              <div class="col-sm-offset-10 col-sm-2">
+                              <button type="button" class="btn btn-primary btn-lg btn-block regbtn">註冊</button>
+                              <div class="col-sm-offset-10 col-sm-2 magicdiv">
                                   <button type="button" class="btn btn-default btn-xs" id="magicBtn2">貼</button>
                               </div>
                           </div>
