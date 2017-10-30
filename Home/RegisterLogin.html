@@ -166,28 +166,59 @@
         vertical-align: middle;
     }
     .box-width{
-        width:520px;
-        margin-left: 50px;
+        width:440px;
+        /*margin-left: 10px;*/
     }
     .margin-top{
         margin-top: 20px;
     }
+<<<<<<< HEAD
+=======
+    .loginform{
+        margin-top: 15px;
+        margin-left: 50px;
+        width: 530px;
+    }
+    .regbtn{
+        margin-left: 55px;
+        width: 510px;
+    }
+>>>>>>> 4908502ca9af918737e028ad669221da5438e245
     .searchstate{
         margin-left: 50px;
     }
     #searchrequire{
         font-size: 18px;
+<<<<<<< HEAD
     }
     #aggrement{
         color: #999999;
     }
+=======
+    }
+    #aggrement{
+        color: #999999;
+        margin-left: 45px;
+        margin-top: 20px;
+    }
+    .magicdiv{
+        margin-top: 8px;
+    }
+>>>>>>> 4908502ca9af918737e028ad669221da5438e245
 
     #fancy-checkbox-info {
     display: none;
     }
     .magicbox{
+<<<<<<< HEAD
         margin-left: 50px;
     }
+=======
+        margin-left: 120px;
+        margin-top: 8px;
+    }
+
+>>>>>>> 4908502ca9af918737e028ad669221da5438e245
     .form-group input[type="checkbox"] + .btn-group > label span {
         width: 20px;
     }
@@ -491,14 +522,14 @@
                     </div>
                     <form class="form-horizontal" action="loginCheck.do" method="post">
                           <div class="form-group margin-top">
-                              <input type="email" class="form-control box-width" id="loginid" name="ID" placeholder="帳號(請輸入email)">
+                              <input type="email" class="form-control loginform" id="loginid" name="ID" placeholder="帳號 (請輸入e-mail)">
                           </div>
                           <div class="form-group margin-top">
-                              <input type="password" class="form-control box-width" id="password" name="Password" placeholder="密碼">
+                              <input type="password" class="form-control loginform" id="password" name="Password" placeholder="密碼">
                           </div>
                           <div class="form-group">
-                              <button type="button" class="btn btn-primary btn-lg btn-block box-width">登入</button>
-                              <div class="col-sm-offset-10 col-sm-2">
+                              <button type="button" class="btn btn-primary btn-lg btn-block loginform">登入</button>
+                              <div class="col-sm-offset-10 col-sm-2 magicdiv">
                                   <button type="button" class="btn btn-default btn-xs" id="magicBtn1">貼</button>
                               </div>
                           </div>
@@ -516,19 +547,45 @@
                     </div>
                     <form class="form-horizontal" action="insert" method="post">
                         <div class="form-group margin-top">
-                            <input type="email" class="form-control box-width" id="mem_id" name="mem_id" placeholder="帳號(請輸入email)">
+                            <label for="mem_id" class="col-sm-2 control-label">帳號</label>
+                            <div class="col-sm-10">
+                            <input type="email" class="form-control box-width" id="mem_id" name="mem_id" placeholder="請輸入e-mail">
+                            </div>
                         </div>
                         <div class="form-group margin-top">
+<<<<<<< HEAD
                             <input type="password" class="form-control box-width" id="password1" name="mem_psw" placeholder="密碼">
+=======
+                            <label for="password1" class="col-sm-2 control-label">密碼</label>
+                            <div class="col-sm-10">
+                            <input type="password" class="form-control box-width" id="password1" name="mem_psw" placeholder="密碼">
+                            </div>
+>>>>>>> 4908502ca9af918737e028ad669221da5438e245
                         </div>
                         <div class="form-group margin-top">
+                            <label for="password2" class="col-sm-2 control-label">確認密碼</label>
+                            <div class="col-sm-10">
                             <input type="password" class="form-control box-width" id="password2" placeholder="確認密碼">
+                            </div>
                         </div>
                         <div class="form-group margin-top">
+<<<<<<< HEAD
                             <input type="text" class="form-control box-width" id="mem_name" name="mem_name" placeholder="姓名">
                         </div>
                         <div class="form-group margin-top">
                             <input type="text" class="form-control box-width" id="mem_addr" name="mem_addr" placeholder="地址">
+=======
+                            <label for="mem_name" class="col-sm-2 control-label">姓名</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control box-width" id="mem_name" name="mem_name" placeholder="姓名">
+                            </div>
+                        </div>
+                        <div class="form-group margin-top">
+                            <label for="mem_addr" class="col-sm-2 control-label">地址</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control box-width" id="mem_addr" name="mem_addr" placeholder="地址">
+                            </div>
+>>>>>>> 4908502ca9af918737e028ad669221da5438e245
                         </div>
                         <div class="[ form-group ]">
                             <input type="checkbox" name="search_state" id="fancy-checkbox-info" autocomplete="off"/>
@@ -538,7 +595,11 @@
                                     <span> </span>
                                 </label>
                                 <label for="fancy-checkbox-info" class="[ btn btn-default active ]">
+<<<<<<< HEAD
                                    我願意公開我的找房狀態，讓房仲能主動找到我
+=======
+                                   我願意公開我的找房狀態，讓房仲能主動找到我 &nbsp&nbsp&nbsp&nbsp
+>>>>>>> 4908502ca9af918737e028ad669221da5438e245
                                 </label>
                             </div>
                         </div>
@@ -553,8 +614,8 @@
                           </div>
                         </div>
                           <div class="form-group">
-                              <button type="button" class="btn btn-primary btn-lg btn-block box-width">註冊</button>
-                              <div class="col-sm-offset-10 col-sm-2">
+                              <button type="button" class="btn btn-primary btn-lg btn-block regbtn">註冊</button>
+                              <div class="col-sm-offset-10 col-sm-2 magicdiv">
                                   <button type="button" class="btn btn-default btn-xs" id="magicBtn2">貼</button>
                               </div>
                           </div>
