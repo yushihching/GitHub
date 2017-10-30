@@ -24,7 +24,9 @@
                 $("#password1").val("123456");
                 $("#password2").val("123456");
                 $("#mem_name").val("大大");
-                $("#mem_address").val("中壢市中大路300號");
+                $("#mem_addr").val("中壢市中大路300號");
+                $("#fancy-checkbox-info").attr("checked","enable");
+                $("#aggrement2").attr("checked","enable");
             });
         });
     </script>
@@ -170,12 +172,38 @@
     .margin-top{
         margin-top: 20px;
     }
-    #mem_mobile{
-        margin-left: 35px;
-        width: 410px;
+    .searchstate{
+        margin-left: 50px;
     }
-    #send_code{
-        margin-right: 42px;
+    #searchrequire{
+        font-size: 18px;
+    }
+    #aggrement{
+        color: #999999;
+    }
+
+    #fancy-checkbox-info {
+    display: none;
+    }
+    .magicbox{
+        margin-left: 50px;
+    }
+    .form-group input[type="checkbox"] + .btn-group > label span {
+        width: 20px;
+    }
+
+    .form-group input[type="checkbox"] + .btn-group > label span:first-child {
+        display: none;
+    }
+    .form-group input[type="checkbox"] + .btn-group > label span:last-child {
+        display: inline-block;   
+    }
+
+    .form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+        display: inline-block;
+    }
+    .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+        display: none;   
     }
 
     </style>
@@ -486,27 +514,40 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="text-center"><label class="control-label">註冊會員</label></h4>
                     </div>
-                    <form class="form-horizontal" action="" method="post">
+                    <form class="form-horizontal" action="insert" method="post">
                         <div class="form-group margin-top">
                             <input type="email" class="form-control box-width" id="mem_id" name="mem_id" placeholder="帳號(請輸入email)">
                         </div>
                         <div class="form-group margin-top">
-                            <input type="password" class="form-control box-width" id="password1" name="Password" placeholder="密碼">
+                            <input type="password" class="form-control box-width" id="password1" name="mem_psw" placeholder="密碼">
                         </div>
                         <div class="form-group margin-top">
                             <input type="password" class="form-control box-width" id="password2" placeholder="確認密碼">
                         </div>
                         <div class="form-group margin-top">
-                            <input type="text" class="form-control box-width" id="mem_name" name="memName" placeholder="姓名">
+                            <input type="text" class="form-control box-width" id="mem_name" name="mem_name" placeholder="姓名">
                         </div>
                         <div class="form-group margin-top">
-                            <input type="email" class="form-control box-width" id="mem_address" name="Address" placeholder="地址">
+                            <input type="text" class="form-control box-width" id="mem_addr" name="mem_addr" placeholder="地址">
+                        </div>
+                        <div class="[ form-group ]">
+                            <input type="checkbox" name="search_state" id="fancy-checkbox-info" autocomplete="off"/>
+                            <div class="[ btn-group ] magicbox">
+                                <label for="fancy-checkbox-info" class="[ btn btn-info ]">
+                                    <span class="[ glyphicon glyphicon-ok ]"></span>
+                                    <span> </span>
+                                </label>
+                                <label for="fancy-checkbox-info" class="[ btn btn-default active ]">
+                                   我願意公開我的找房狀態，讓房仲能主動找到我
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
-                          <div class="col-sm-offset-1 col-sm-11">
+                          <div class="col-sm-offset-1 col-sm-11"  id="aggrement">
                               <div class="checkbox">
                                 <label>
-                                  <input type="checkbox" name="aggrement"> 若要繼續註冊，請先閱讀並同意好房事的服務條款 & 隱私權政策
+                                  <input type="checkbox" name="aggrement" id="aggrement2"> 
+                                  若要繼續註冊，請先閱讀並同意好房事的<a href="">服務條款</a> & <a href="">隱私權政策</a>
                                 </label>
                               </div>
                           </div>
